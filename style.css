@@ -1,6 +1,6 @@
 /* null style */
 *{padding: 0;margin: 0;border: 0;}
-*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box; transition: .3s all;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
@@ -21,13 +21,11 @@ li{list-style-type: none;}
 :root{
     --text: #151519;
     --primary: #FFEEC1;
-}
 
-h1, p{
-    color: var(--text);
-    font-family: Poppins;
-    letter-spacing: 0%;
-    text-align: center;
+    --width: 320px;
+    --height: 427px;
+
+    --subtitle-size: 10px;
 }
 
 .body{
@@ -41,8 +39,8 @@ h1, p{
 }
 
 .wrapper{
-    width: 320px;
-    height: 427px;
+    width: var(--width);
+    height: var(--height);
     border: 1px var(--text) solid;
     position: relative;
     overflow: hidden;
@@ -52,15 +50,26 @@ h1, p{
     margin: 51px 0 0;
 }
 
+.title, .subtitle{
+    position: relative;
+    color: var(--text);
+    font-family: Poppins;
+    letter-spacing: 0%;
+    text-align: center;
+    z-index: 5;
+}
+
 .title{
     font-size: 27.92px;
     font-weight: 800;
+    left: calc(var(--width) * -1);
 }
 
 .subtitle{
-    font-size: 20.53px;
+    font-size: var(--subtitle-size);
     font-weight: 600;
     margin-bottom: 5px;
+    top: calc(-1 * var(--height));
 }
 
 .img{
